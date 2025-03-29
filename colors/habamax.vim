@@ -13,7 +13,7 @@ set background=dark
 hi clear
 let g:colors_name = 'habamax'
 
-let s:t_Co = has('gui_running') ? -1 : (&t_Co ?? 0)
+let s:t_Co = exists('&t_Co') && !has('gui_running') ? (empty(&t_Co) ? 0 : &t_Co) : -1
 
 hi! link Terminal Normal
 hi! link StatuslineTerm Statusline
